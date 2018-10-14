@@ -10,12 +10,12 @@ import (
 )
 
 type sp_args struct {
-	start_page  int
-	end_page    int
-	in_filename string
-	page_len    int
-	page_type   int
-	print_dest  string
+	start_page  int //开始页码 
+	end_page    int //结束页码
+	in_filename string // 文件名
+	page_len    int // 每一页的大小
+	page_type   int // 页类型
+	print_dest  string // 打印目的地
 }
 
 const INBUFSIZ = 16 * 1024
@@ -23,7 +23,7 @@ const INBUFSIZ = 16 * 1024
 var progname string
 
 func main() {
-	sa := sp_args{-1, -1, "", 3, 'l', ""}
+	sa := sp_args{-1, -1, "", 3, 'l', ""} //创建结构体数据
 	progname = os.Args[0]
 	process_args(len(os.Args), os.Args, &sa)
 	process_input(sa)
